@@ -4,8 +4,11 @@
  * having to figure out which file they belong to!
  */
 export {default as Navbar} from './navbar'
-export {default as InfoPage} from './infoPage'
+export {default as Info} from './nav-infoPage'
+export {default as Projects} from './nav-projects'
+export {default as Interests} from './nav-interests'
 export {default as Footer} from './footer'
-export {default as Posts} from './posts'
+export {default as Posts} from './nav-posts'
 export {default as UserHome} from './user-home'
 export {Login, Signup} from './auth-form'
+export {default as NotFound} from './notFound'

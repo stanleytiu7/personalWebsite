@@ -1,21 +1,37 @@
 body {
-  font-family: aqua;
+	font-family: aqua;
 }
 
 a {
-  text-decoration: none;
-}
+	text-decoration: none; }
 
 label {
-  display: block;
+	display: block;
 }
 
 nav a {
-  display: inline-block;
-  margin: 1em;
+	display: inline-block;
+	margin: 1em;
 }
 
 form div {
-  margin: 1em;
-  display: inline-block;
+	margin: 1em;
+	display: inline-block;
+}
+
+.navbar {
+  text-align: right;    
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 2%;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right:0;
+}
+
+.selected {
+	color: green;
 }

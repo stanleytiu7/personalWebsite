@@ -1,33 +1,47 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
+import {NavLink, Link} from 'react-router-dom'
 import {logout} from '../store'
 
-const Navbar = ({ handleClick, isLoggedIn }) => ( <div>
-      <h1> Stanley Tiu </h1>
-      <nav>
-          {isLoggedIn ? (
-        <div>
-            {/* The navbar will show these links after you log in */}
-            <Link to="/home">Home</Link>
-            <a href="#" onClick={handleClick}>
-                Logout
-            </a>
-        </div>
-      ) : (
-        <div>
-            {/* The navbar will show these links before you log in */}
-            {/* <Link to="/login">Login</Link>
-            <Link to="/signup">Sign Up</Link>*/}
-            <Link to="/info">About Me</Link>
-            <Link to="/posts">Musings</Link>
-        </div>
-      )}
-  </nav>
-  <a> Navbar ends here! </a>
-  </div>
-)
+let menuItems = ['info', 'posts', 'projects', 'interests', 'brokenlinktotestmap'];
+
+class Navbar extends React.Component {
+	constructor(){
+		super();
+		this.state = {hover: false};
+	}
+
+	_toggleHover = () => {
+	  this.setState({hover: !this.state.hover})
+	}
+// isLoggedIn to keep track of who is logged in
+// clicked to handle the click for logout
+  render(){
+	  let linkStyle;
+
+    return (<div className="navbar">
+	    <nav>
+		    {this.props.isLoggedIn ? (
+				  <div>
+					  {/* The navbar will show these links after you log in */}
+					  <Link to="/home">Home</Link>
+					  <a href="#" onClick={this.props.clicked}>
+						  Logout
+					  </a>
+				  </div>
+			  ) : (
+				  <div>
+					  {/* The navbar will show these links before you log in */}
+					  {/* <Link to="/login">Login</Link>
+						  <Link to="/signup">Sign Up</Link>*/}
+							{menuItems.map(menuitem => (<NavLink activeClassName="selected" to={'/' + menuitem}>{menuitem}</NavLink>))}
+					  </div>
+			  )}
+		  </nav>
+	  </div>)
+  }
+}
 
 /**
  * CONTAINER
@@ -40,18 +54,18 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    handleClick() {
+    clicked() {
       dispatch(logout())
     }
   }
 }
 
-export default connect(mapState, mapDispatch)(Navbar)
+export default connect(mapState, mapDispatch, null, {pure: false})(Navbar)
 
 /**
  * PROP TYPES
  */
 Navbar.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  clicked: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
 }

@@ -12,7 +12,7 @@ const infoPage = () => (
         <br />
         <a> Age: 25 </a>
         <br />
-        <a> Degree: Bachelor\'s of Science from Columbia University </a>
+        <a> Degree: Bachelor's of Science from Columbia University </a>
         <br />
     </div>
 )
