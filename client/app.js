@@ -7,8 +7,10 @@ import Routes from './routes'
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <Routes />
+        <Navbar />
+        <div className="body">
+            <Routes />
+        </div>
       <Footer />
     </div>
   )

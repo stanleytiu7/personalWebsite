@@ -3,7 +3,10 @@ body {
 }
 
 a {
-	text-decoration: none; }
+	text-decoration: none;
+    outline: 0;
+}
+
 a:visited {
     color: black;
 }
@@ -24,7 +27,7 @@ form div {
 .navbar {
   text-align: right;    
   border-bottom: 1px solid lightgrey;
-  margin-bottom: 2%;
+  margin-bottom: 2.5%;
 }
 
 .footer {
@@ -32,4 +35,9 @@ form div {
   left: 0;
   bottom: 0;
   right:0;
+}
+
+.body {
+    padding-left:2.5%;
+    padding-right:2.5%;
 }
