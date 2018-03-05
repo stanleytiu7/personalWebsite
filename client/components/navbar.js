@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {NavLink, Link} from 'react-router-dom'
 import {logout} from '../store'
 
-let menuItems = ['info', 'posts', 'projects', 'interests', 'brokenlinktotestmap'];
+let _menuItems = ['info', 'posts', 'projects', 'interests', 'brokenlinktotestmap'];
 
 class Navbar extends React.Component {
 	constructor(){
@@ -12,14 +12,23 @@ class Navbar extends React.Component {
 		this.state = {hover: false};
 	}
 
-	_toggleHover = () => {
-	  this.setState({hover: !this.state.hover})
-	}
+    _toggleHover = (evt) => {
+      if (!this.state.hover){
+        this.setState({hover: evt.target.text})
+      } else {
+        this.setState({hover: null})
+      }
+    }
+
 // isLoggedIn to keep track of who is logged in
 // clicked to handle the click for logout
   render(){
-	  let linkStyle;
-
+    let _linkStyle = {};
+    if (this.state.hover){
+      _linkStyle[this.state.hover] = {backgroundColor: 'black', color: 'white'}
+    } else {
+      _linkStyle[this.state.hover] = {backgroundColor: 'white', color: 'black'}
+    }
     return (<div className="navbar">
 	    <nav>
 		    {this.props.isLoggedIn ? (
@@ -35,8 +44,16 @@ class Navbar extends React.Component {
 					  {/* The navbar will show these links before you log in */}
 					  {/* <Link to="/login">Login</Link>
 						  <Link to="/signup">Sign Up</Link>*/}
-							{menuItems.map(menuitem => (<NavLink activeClassName="selected" to={'/' + menuitem}>{menuitem}</NavLink>))}
-					  </div>
+                          {_menuItems.map(menuitem => (
+                          <NavLink
+                              key={menuitem}
+                              style={_linkStyle[menuitem]}
+                              onMouseEnter={this._toggleHover}
+                              onMouseLeave={this._toggleHover}
+                              activeStyle={{color: 'green'}}
+                              to={'/' + menuitem}>{menuitem}
+                          </NavLink>))}
+				  </div>
 			  )}
 		  </nav>
 	  </div>)

@@ -4,7 +4,9 @@ body {
 
 a {
 	text-decoration: none; }
-
+a:visited {
+    color: black;
+}
 label {
 	display: block;
 }
@@ -30,8 +32,4 @@ form div {
   left: 0;
   bottom: 0;
   right:0;
-}
-
-.selected {
-	color: green;
 }
