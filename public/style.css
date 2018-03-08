@@ -1,5 +1,6 @@
 body {
 	font-family: aqua;
+    margin: 0;
 }
 
 a {
@@ -7,7 +8,7 @@ a {
     outline: 0;
 }
 
-a:visited {
+a:visited, a:link {
     color: black;
 }
 label {
@@ -27,7 +28,8 @@ form div {
 .navbar {
   text-align: right;    
   border-bottom: 1px solid lightgrey;
-  margin-bottom: 2.5%;
+  top: 0;left: 0;right: 0;
+  font-size: 1.5em;
 }
 
 .footer {
@@ -38,6 +40,5 @@ form div {
 }
 
 .body {
-    padding-left:2.5%;
-    padding-right:2.5%;
+    margin: 2.5%
 }

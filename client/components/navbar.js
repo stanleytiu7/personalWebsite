@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {NavLink, Link} from 'react-router-dom'
 import {logout} from '../store'
 
-let _menuItems = ['info', 'posts', 'projects', 'interests', 'brokenlinktotestmap'];
+let _menuItems = ['info', 'posts', 'projects', 'interests', 'broken link'];
 
 class Navbar extends React.Component {
 	constructor(){
@@ -51,7 +51,7 @@ class Navbar extends React.Component {
                               onMouseEnter={this._toggleHover}
                               onMouseLeave={this._toggleHover}
                               activeStyle={{color: 'green'}}
-                              to={'/' + menuitem}>{menuitem}
+                              to={'/' + menuitem.replace(/\s+/g, '+')}>{menuitem}
                           </NavLink>))}
 				  </div>
 			  )}
