@@ -12,3 +12,6 @@ export {default as Posts} from './nav-posts'
 export {default as UserHome} from './user-home'
 export {Login, Signup} from './auth-form'
 export {default as NotFound} from './notFound'
+
+
+export {default as Test} from './test'

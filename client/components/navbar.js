@@ -4,13 +4,13 @@ import {connect} from 'react-redux'
 import {NavLink, Link} from 'react-router-dom'
 import {logout} from '../store'
 
-let _menuItems = ['info', 'posts', 'projects', 'interests', 'broken link'];
+let _menuItems = ['info', 'posts', 'projects', 'interests', 'broken link', 'test'];
 
 class Navbar extends React.Component {
-	constructor(){
-		super();
-		this.state = {hover: false};
-	}
+    constructor(){
+        super();
+        this.state = {hover: false};
+    }
 
     _toggleHover = (evt) => {
       if (!this.state.hover){
@@ -30,20 +30,22 @@ class Navbar extends React.Component {
       _linkStyle[this.state.hover] = {backgroundColor: 'white', color: 'black'}
     }
     return (<div className="navbar">
-	    <nav>
-		    {this.props.isLoggedIn ? (
-				  <div>
-					  {/* The navbar will show these links after you log in */}
-					  <Link to="/home">Home</Link>
-					  <a href="#" onClick={this.props.clicked}>
-						  Logout
-					  </a>
-				  </div>
-			  ) : (
-				  <div>
-					  {/* The navbar will show these links before you log in */}
-					  {/* <Link to="/login">Login</Link>
-						  <Link to="/signup">Sign Up</Link>*/}
+        <nav>
+            {this.props.isLoggedIn ? (
+                  <div>
+                      {/* The navbar will show these links after you log in */}
+                      <Link to="/home">Home</Link>
+                      <a href="#" onClick={this.props.clicked}>
+                          Logout
+                      </a>
+                  </div>
+              ) : (
+                  <div>
+
+                      <h1>Stanley Tiu</h1>
+                      {/* The navbar will show these links before you log in */}
+                      {/* <Link to="/login">Login</Link>
+                          <Link to="/signup">Sign Up</Link>*/}
                           {_menuItems.map(menuitem => (
                           <NavLink
                               key={menuitem}
@@ -53,10 +55,10 @@ class Navbar extends React.Component {
                               activeStyle={{color: 'green'}}
                               to={'/' + menuitem.replace(/\s+/g, '+')}>{menuitem}
                           </NavLink>))}
-				  </div>
-			  )}
-		  </nav>
-	  </div>)
+                      </div>
+              )}
+          </nav>
+      </div>)
   }
 }
 

@@ -1,3 +1,8 @@
+h1 {
+    font-size:3em;
+    margin-top:1%;margin-bottom:1%;
+}
+
 body {
 	font-family: aqua;
     margin: 0;
@@ -26,19 +31,21 @@ form div {
 }
 
 .navbar {
-  text-align: right;    
-  border-bottom: 1px solid lightgrey;
-  top: 0;left: 0;right: 0;
+  text-align: center;   border-bottom: 1px solid lightgrey; top: 0;left: 0;right: 0;
   font-size: 1.5em;
 }
 
-.footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right:0;
+.body {
+    white-space:pre-wrap;
+    display:block;
+    margin-top:5%;margin-bottom:5%;
+    margin-left:20%; margin-right: 20%;
+    font-size: 1.5em
 }
 
-.body {
-    margin: 2.5%
+.footer {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  text-align: right;
+  color: grey;
 }

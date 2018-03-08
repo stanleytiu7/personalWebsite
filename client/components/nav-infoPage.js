@@ -6,7 +6,7 @@ import React from 'react'
 
 const infoPage = () => (
     <div>
-        <p> Name: Stanley Tiu <br />
+        <p>Name: Stanley Tiu <br />
             Gender: Male <br />
             Age: 25 <br />
             Degree: Bachelor's of Science from Columbia University <br />
