@@ -4,6 +4,7 @@ import React from 'react'
  * COMPONENT
  */
 
+// add in grid boxes, each with a cover image for specific interest, which links to a different page.
 const interests = () => (
     <div>
         <a>Interests will go here!</a>
