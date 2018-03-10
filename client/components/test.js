@@ -8,7 +8,7 @@ const testPage = () => (
     <div>
         <p>
             {loremIpsum({
-                count: 20,
+                count: 21,
             units: 'paragraph',
             sentenceLowerBound: 5,
             sentenceUpperBound: 15,
