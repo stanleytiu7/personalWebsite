@@ -12,7 +12,7 @@ class Navbar extends React.Component {
         this.state = {hover: false};
     }
 
-    _toggleHover = (evt) => {
+    toggleHover = evt => {
       if (!this.state.hover){
         this.setState({hover: evt.target.text})
       } else {
@@ -42,20 +42,20 @@ class Navbar extends React.Component {
               ) : (
                   <div>
 
-                      <h1>Stanley Tiu</h1>
-                      {/* The navbar will show these links before you log in */}
-                      {/* <Link to="/login">Login</Link>
-                          <Link to="/signup">Sign Up</Link>*/}
-                          {_menuItems.map(menuitem => (
-                          <NavLink
-                              key={menuitem}
-                              style={_linkStyle[menuitem]}
-                              onMouseEnter={this._toggleHover}
-                              onMouseLeave={this._toggleHover}
-                              activeStyle={{color: 'green'}}
-                              to={'/' + menuitem.replace(/\s+/g, '+')}>{menuitem}
-                          </NavLink>))}
-                      </div>
+              <h1>Stanley Tiu</h1>
+              {/* The navbar will show these links before you log in */}
+              {/* <Link to="/login">Login</Link>
+                  <Link to="/signup">Sign Up</Link>*/}
+                  {_menuItems.map(menuitem => (
+                  <NavLink
+                      key={menuitem}
+                      style={_linkStyle[menuitem]}
+                      onMouseEnter={this.toggleHover}
+                      onMouseLeave={this.toggleHover}
+                      activeStyle={{color: 'green'}}
+                      to={'/' + menuitem.replace(/\s+/g, '+')}>{menuitem}
+                  </NavLink>))}
+              </div>
               )}
           </nav>
       </div>)
