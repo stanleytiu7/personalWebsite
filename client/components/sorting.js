@@ -27,7 +27,10 @@ function ArrayThing(props) {
     <div>
         {props.array.map(item =>
         (<Item
-            style={{maxWidth: `${Math.floor(divUnits * item * 100)}%`}}
+          style={{
+            maxWidth: `${Math.floor(divUnits * item * 100)}%`,
+            backgroundColor: 'Gray'
+          }}
             key={item}
             value={item}
             divisions={divUnits}
@@ -39,7 +42,10 @@ function ArrayThing(props) {
 function Item(props) {
 console.log(props.style);
 
-    return <div style={props.style}>{props.value}</div>
+  return (
+  <div style={{ paddingTop:'1%', paddingBottom:'1%' }}>
+    <div style={props.style}>{props.value}</div>
+  </div>)
 }
 
 export default Sorting

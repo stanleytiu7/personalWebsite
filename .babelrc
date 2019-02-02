@@ -1,5 +1,6 @@
 {
-  "presets": ['@babel/preset-react', '@babel/env']
+  "presets": ['@babel/preset-react', '@babel/env'],
+  "plugins": ['@babel/plugin-proposal-class-properties']
 }
   /*
     Babel uses these "presets" to know how to transpile your Javascript code. Here's what we're saying with these:
